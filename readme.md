@@ -1,6 +1,8 @@
 # Algorithms and Data Structure Fundamentals
 
 
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+
 ## Data Structure
 
 
@@ -120,5 +122,57 @@ function insertionSort(array) {
       }
     }
 	}
+}
+```
+
+### Search
+
+#### Lineal Search
+
+In this type of search, a sequential search is made over all items one by one. Every item is checked and if a match is found then that particular item is returned, otherwise the search continues till the end of the data collection.
+
+```
+var beasts = ['Centaur', 'Godzilla', 'Mosura', 'Minotaur', 'Hydra', 'Nessie'];
+
+beasts.indexOf('Godzilla');
+
+beasts.findIndex(function(item){
+  return item === 'Godzilla';
+});
+
+beasts.find(function(item){
+  return item === 'Godzilla';
+})
+
+beasts.includes('Godzilla')
+```
+
+#### Binaty Search
+
+Is a searching algorithm used in a sorted array by repeatedly dividing the search interval in half. The idea of binary search is to use the information that the array is sorted and reduce the time complexity to O(Log n).
+
+```
+let recursiveFunction = function (arr, x) {
+      
+    const start = 0;
+    const end = arr.length;
+    // Base Condition
+    if (start > end) return false;
+  
+    // Find the middle index
+    let mid=Math.floor((start + end)/2);
+  
+    // Compare mid with given key x
+    if (arr[mid]===x) return true;
+         
+    // If element at mid is greater than x,
+    // search in the left half of mid
+    if(arr[mid] > x)
+        return recursiveFunction(arr, x, start, mid-1);
+    else
+ 
+        // If element at mid is smaller than x,
+        // search in the right half of mid
+        return recursiveFunction(arr, x, mid+1, end);
 }
 ```
