@@ -176,3 +176,41 @@ let recursiveFunction = function (arr, x) {
         return recursiveFunction(arr, x, mid+1, end);
 }
 ```
+
+### Dynamic Programming
+
+#### Memoization
+Memoization is the top-down approach to solving a problem with dynamic programming. It's called memoization because we will create a memo, or a “note to self”, for the values returned from solving each problem.
+
+```
+function addTo80(num) {
+   return num + 80;
+}
+
+let cache = {};
+function memoizedAddTo80(num) {
+  if (num in cache) {
+    return cache[num]; 
+  } else {
+    console.log('Calculating...');
+    cache[num] = num + 80;
+    return cache[num];
+  }
+}
+
+// Computes and stores 85 in cache
+console.log(memoizedAddTo80(5));
+
+// Returns memoized data from memory
+console.log(memoizedAddTo80(5));
+
+// Returns memoized data from memory
+console.log(memoizedAddTo80(5));
+
+// Output:
+Calculating...
+85
+85
+85
+
+```
