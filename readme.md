@@ -36,7 +36,7 @@ A recursive algorithm calls itself with smaller input values and returns the res
 ```
 let sumcount = 0, sum = 0;
 function aVeryBigSum(ar) {
-    // Write your code here
+    //Write your code here
     if(sumcount > ar.length){
         return sum
     }
@@ -79,7 +79,7 @@ Is a sorting algorithm that selects the smallest element from an unsorted list i
 function selectionSort(array) {
   const length = array.length;
   for(let i = 0; i < length; i++){
-    // set current index as minimum
+    //set current index as minimum
     let min = i;
     let temp = array[i];
     for(let j = i+1; j < length; j++){
