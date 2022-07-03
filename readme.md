@@ -17,10 +17,10 @@
 
 ### What can cause time in a function?-
 
-Operations (+, -, *, /)
-Comparisons (<, >, ==)
-Looping (for, while)
-Outside Function call (function())
+- Operations (+, -, *, /)
+- Comparisons (<, >, ==)
+- Looping (for, while)
+- Outside Function call (function())
 
 ### Rule Book
 
@@ -28,8 +28,8 @@ Outside Function call (function())
 - Rule 2: Remove Constants
 - Rule 3: Different inputs should have different variables. O(a+b). A and B arrays nested would be
 O(a*b)
-- - for steps in order
-- - for nested steps
+ - for steps in order
+ - for nested steps
 - Rule 4: Drop Non-dominant terms
 
 ### What causes Space complexity?
@@ -84,7 +84,7 @@ function aVeryBigSum(ar) {
     if(ar[sumcount] != undefined)
       sum = sum + ar[sumcount];
     sumcount++
-    return aVeryBigSum(ar);
+    return aVeryBigSum(ar);  // O(2^n)
 }
 ```
 
