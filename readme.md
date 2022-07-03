@@ -84,7 +84,7 @@ function aVeryBigSum(ar) {
     if(ar[sumcount] != undefined)
       sum = sum + ar[sumcount];
     sumcount++
-    return aVeryBigSum(ar);  // O(2^n)
+    return aVeryBigSum(ar);  // O(2^n) Exponential
 }
 ```
 
@@ -108,6 +108,9 @@ function bubbleSort(array) {
     }        
   }
 }
+
+// Space Complexity O(n)
+// Time Complexity O(n^2)
 
 ```
 
@@ -162,6 +165,50 @@ function insertionSort(array) {
 	}
 }
 ```
+
+#### Quicksort
+
+The QuickSort algorithm is based on the "divide and conquer" technique whereby in each recursion, the problem is divided into smaller subproblems and they are solved separately (applying the same technique) to be joined again once solved.
+
+```
+function partition(arr, start, end){
+    // Taking the last element as the pivot
+    const pivotValue = arr[end];
+    let pivotIndex = start; 
+    for (let i = start; i < end; i++) {
+        if (arr[i] < pivotValue) {
+        // Swapping elements
+        [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
+        // Moving to next element
+        pivotIndex++;
+        }
+    }
+    
+    // Putting the pivot value in the middle
+    [arr[pivotIndex], arr[end]] = [arr[end], arr[pivotIndex]] 
+    return pivotIndex;
+};
+```
+
+#### Merge Sort
+
+The merge sort is one of the more advanced sorting algorithms that’s quite efficient in sorting large amounts of data. The algorithm uses the recursive function concept with divide and conquer strategy to efficiently sort a given list of elements.
+
+```
+function merge(left, right) {
+  let sortedArr = []; // the sorted elements will go here
+
+  while (left.length && right.length) {
+    // insert the smallest element to the sortedArr
+    if (left[0] < right[0]) {
+      sortedArr.push(left.shift());
+    } else {
+      sortedArr.push(right.shift());
+    }
+  }
+}
+```
+
 
 ### Search
 
