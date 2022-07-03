@@ -3,8 +3,46 @@
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
-## Data Structure
+## Big-O
 
+[Click Here](https://www.bigocheatsheet.com/)
+
+- O(1) Constant- no loops
+- O(log N) Logarithmic- usually searching algorithms have log n if they are sorted (Binary Search)
+- O(n) Linear- for loops, while loops through n items
+- O(n log(n)) Log Liniear- usually sorting operations
+- O(n^2) Quadratic- every element in a collection needs to be compared to ever other element. Two nested loops
+- O(2^n) Exponential- recursive algorithms that solves a problem of size N
+- O(n!) Factorial- you are adding a loop for every element
+
+### What can cause time in a function?-
+
+Operations (+, -, *, /)
+Comparisons (<, >, ==)
+Looping (for, while)
+Outside Function call (function())
+
+### Rule Book
+
+- Rule 1: Always worst Case
+- Rule 2: Remove Constants
+- Rule 3: Different inputs should have different variables. O(a+b). A and B arrays nested would be
+O(a*b)
+- - for steps in order
+- - for nested steps
+- Rule 4: Drop Non-dominant terms
+
+### What causes Space complexity?
+
+- Variables
+- Data Structures
+- Function Call
+- Allocations
+
+![alt Big-O CheatSheet](https://ih1.redbubble.net/image.256104184.9408/flat,750x,075,f-pad,750x1000,f8f8f8.u2.jpg)
+
+
+## Data Structure
 
 ### Hash table
 With hash tables we define a hash to identify the items.
