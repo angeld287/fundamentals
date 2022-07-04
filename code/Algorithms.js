@@ -1,6 +1,8 @@
 //Recursive
+
+let sumcount = 0, sum = 0;
+
 function aVeryBigSum(ar) {
-    //Write your code here
     if (sumcount > ar.length) {
         return sum
     }
@@ -8,7 +10,24 @@ function aVeryBigSum(ar) {
     if (ar[sumcount] != undefined)
         sum = sum + ar[sumcount];
     sumcount++
-    return aVeryBigSum(ar);  // O(2^n) Exponential
+    return aVeryBigSum(ar);
 }
 
-aVeryBigSum([3, 4, 1, 7, 8, 9])
+console.log('recursive: ', aVeryBigSum([3, 4, 1, 7, 8, 9]))
+
+
+//Bubble Sort 
+function bubbleSort(array) {
+    const length = array.length;
+    for (let i = 0; i < length; i++) {
+        for (let j = 0; j < length; j++) {
+            if (array[j] > array[j + 1]) {
+                //Swap the numbers
+                let temp = array[j]
+                array[j] = array[j + 1];
+                array[j + 1] = temp;
+            }
+        }
+    }
+}
+
