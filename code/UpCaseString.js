@@ -34,4 +34,27 @@ function wave(array) {
     return result
 }
 
-console.log(wave("tex1t"))
+function wave_v2(array) {
+    if (!array || array === '' || !isNaN(array)) {
+        return []
+    }
+
+    array = array.replace(/[0-9]/, '')
+
+    let result = []
+    for (let i = 0; i < array.length; i++) {
+        let e = array[i];
+        let text = array
+
+        if (!isNaN(e)) {
+            continue;
+        }
+        text = text.replace(e, e.toUpperCase())
+
+        result.push(text)
+    }
+
+    return result
+}
+
+console.log(wave_v2("tex1r"))
