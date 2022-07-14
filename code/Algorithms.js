@@ -71,6 +71,8 @@ function insertionSort(array) {
             }
         }
     }
+
+    return array
 }
 
 console.log('Insertion Sort: ', insertionSort([3, 4, 1, 7, 8, 2, 9]))
