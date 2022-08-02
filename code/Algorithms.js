@@ -97,3 +97,7 @@ function partition(arr, start, end) {
 };
 
 console.log('QuickSort: ', partition([3, 4, 1, 7, 8, 2, 9], 0, 7))
+
+//Hay que arreglar el Pivot
+
+console.log("<a rel='do' href='https://google.com'>".match(/rel=("|')/))
