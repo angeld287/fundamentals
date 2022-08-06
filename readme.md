@@ -47,6 +47,8 @@ O(a*b)
 ### Hash table
 With hash tables we define a hash to identify the items.
 
+` let hash = { key: value}; `
+
 ### Linked list
 Is like an object that links other objects in a chain. It has a head object and a tail object.
 
