@@ -1,5 +1,6 @@
 /**
- * Given an array of integers, where all elements but one occur twice, find the unique element.
+ * Given an array of integers, where all elements but one occur twice, 
+ * find the unique element.
  * 
  * Function Description
  *  Complete the lonelyinteger function in the editor below.
