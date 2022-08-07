@@ -6,4 +6,4 @@
  *  Complete the lonelyinteger function in the editor below.
  *  lonelyinteger has the following parameter(s): 
  *  int a[n]: an array of integers
- */
+ */ 
