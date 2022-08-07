@@ -57,4 +57,8 @@ function wave_v2(array) {
     return result
 }
 
-console.log(wave_v2("tex1r"))
+console.log(
+    'hola'.split('').map((v, i) => ''.concat('hola'.substring(0, i).concat('hola'[i].toUpperCase()).concat('hola'.substring(i + 1))))
+)
+
+//console.log(wave_v2("tex1r"))

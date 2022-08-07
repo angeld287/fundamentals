@@ -10,5 +10,4 @@ for (let i = 0; i < number; i++) {
     primeNumbers.push(number)
 }
 
-
 console.log(primeNumbers);
