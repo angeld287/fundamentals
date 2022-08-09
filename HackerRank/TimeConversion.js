@@ -20,3 +20,19 @@ string: the time in 24 hour format
 
 
 */
+function timeConversion(s) {
+    // Write your code here
+    let h = parseInt(s.slice(0, 2))
+
+    if ((s.slice(-2)).toLowerCase() === 'pm') {
+        return (h === 12 ? 12 : h + 12).toString() + s.slice(2, s.length - 2)
+    } else {
+        if (h === 12) {
+            return "00" + s.slice(2, s.length - 2)
+        }
+        return s.slice(0, s.length - 2)
+    }
+
+}
+
+console.log(timeConversion('12:45:54PM'))
