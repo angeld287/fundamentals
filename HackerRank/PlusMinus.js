@@ -20,3 +20,25 @@
     The function should not return a value.
 
 */
+
+function plusMinus(arr) {
+    // Write your code here
+    let dicct = {}
+    const n = arr.length;
+    for (let i = 0; i < n; i++) {
+        const e = arr[i]
+        const key = (e > 0) ? '+' : (e < 0 ? '-' : '0');
+
+        if (!dicct[key]) {
+            dicct[key] = 1;
+        } else {
+            dicct[key] += 1;
+        }
+    }
+
+    console.log(dicct['+'] ? parseFloat(dicct['+'] / n).toFixed(6) : '0.000000');
+    console.log(dicct['-'] ? parseFloat(dicct['-'] / n).toFixed(6) : '0.000000');
+    console.log(dicct['0'] ? parseFloat(dicct['0'] / n).toFixed(6) : '0.000000');
+}
+
+plusMinus([1, -2, -7, 9, 1, -8, -5])
