@@ -31,3 +31,30 @@
     https://www.hackerrank.com/challenges/sock-merchant/problem?h_r=internal-search
 */
 
+function sockMerchant(n, ar) {
+    // Write your code here
+    const elements = {}
+    const pairs = {}
+    for (let i = 0; i < n; i++) {
+        const e = ar[i];
+        if (!elements[e]) {
+            elements[e] = 1
+        } else {
+            elements[e] += 1
+            pairs[e] = checkPair(elements[e]) / 2
+        }
+    }
+    const results = Object.values(pairs);
+    return results.length > 0 ? results.reduce((a, b) => a + b) : 0
+
+}
+
+function checkPair(n) {
+    if (n % 2 === 0) {
+        return n
+    } else {
+        return n - 1
+    }
+}
+
+console.log(sockMerchant(3, [10, 20, 30]))
