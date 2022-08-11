@@ -2,36 +2,11 @@ function countApplesAndOranges(s, t, a, b, apples, oranges) {
     // Write your code here
 
 
-    let applesIn = []
-    let orangesIn = []
-    for (let i = 0; i < apples.length; i++) {
-        const e = apples[i];
+    let applesD = apples.map(_ => (a + _))
+    let orangeD = oranges.map(_ => (b + _))
 
-        if (e < 0) {
-
-            let asd = s - a
-            let v = Math.abs(e)
-            console.log(asd, v);
-            if (v >= asd) {
-                applesIn.push(e)
-            }
-        }
-
-    }
-
-    for (let i = 0; i < oranges.length; i++) {
-        const e = oranges[i];
-        if (e > 0) {
-            let tbd = b - t
-            let v = Math.abs(e)
-            if (v >= tbd) {
-                orangesIn.push(e)
-            }
-        }
-
-    }
-    console.log(applesIn.length)
-    console.log(orangesIn.length)
+    console.log(applesD.filter(_ => (_ >= s) && (_ <= t)).length)
+    console.log(orangeD.filter(_ => (_ >= s) && (_ <= t)).length)
 
 }
 
