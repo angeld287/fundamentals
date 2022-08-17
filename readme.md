@@ -45,7 +45,7 @@ O(a*b)
 ## Data Structure
 
 ### Hash table
-With hash tables we define a hash to identify the items.
+With hash tables we define a hash to identify the items. This data structure is recommender for counter algorithms.
 
 ` let hash = { key: value}; `
 
