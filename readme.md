@@ -62,11 +62,35 @@ is the opposite of stack FIFO (First in First Out). It means that the first item
 Is a hierarchical data structure defined as a collection of nodes. It has root, parent, and childs nodes. The HTML and XML tags are based on tree data structure.
 
 ### Graph
-Is a non-linear data structure consisting of nodes and edges. Graph can be:
+Graphs is a non-linear data structure consisting in the relationship between edges and nodes. With graphs we can use to representa networks, routes of maps, etc.
+
+Graph can be:
 
 - Directed / Undirected
 - Weighted / Unweighted
 - Cyclic / Acyclic
+  
+
+#### Types of graphs
+
+##### Directed / Undirected
+
+- Directed: is when the connections has specifics directions.
+
+- Undirected: is when the connection do not specify directions.
+
+##### Weighted / Unweighted 
+
+- Weighted: is when the edges has some informations the graphs is weighted. For example: google maps 
+ has durations and distances on their routes.
+
+- Unweighted: is when the edges doesn’t has información.
+
+##### Cyclic / Acyclic
+
+- Cyclic: is when the nodes connections has a circular addressing. 
+
+- Acyclic: is when the dirección of nodes connection do not make any repetition. 
 
 
 ## Algorithms
