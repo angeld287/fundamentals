@@ -21,3 +21,64 @@
  *      otro nodo.
  * 
  */
+
+
+function componentsInGraph(gb) {
+    /*
+         * Write your code here.
+    */
+    const n = gb.length;
+    // initialize disjoint sets
+    const sets = Array(2 * n);
+    for (let i = 0; i < 2 * n; i++) {
+        sets[i] = {
+            count: 1,
+            idx: i,
+        };
+    }
+
+    gb.forEach((e) => {
+        const s1 = findSet(sets, e[0] - 1);
+        const s2 = findSet(sets, e[1] - 1);
+        if (s1.idx !== s2.idx) {
+            // merge two sets
+            mergeSets(s1, s2);
+        }
+    });
+
+    let min = Infinity, max = 0;
+    sets.forEach((set, idx) => {
+        if (set.idx === idx) {
+            if (max < set.count) {
+                max = set.count;
+            }
+            if (set.count > 1 && min > set.count) {
+                min = set.count;
+            }
+        }
+    });
+    return [min, max];
+
+}
+
+function findSet(sets, d) {
+    let s = d;
+    while (sets[s].idx !== s) {
+        s = sets[s].idx;
+    }
+    return sets[s];
+}
+
+function mergeSets(set1, set2) {
+    let small = set1;
+    let large = set2;
+    if (set1.count > set2.count) {
+        small = set2;
+        large = set1;
+    }
+    small.idx = large.idx;
+    large.count = small.count + large.count;
+    small.count = large.count;
+}
+
+console.log(componentsInGraph([[1, 6], [2, 7], [3, 8], [4, 9], [2, 6]]))
