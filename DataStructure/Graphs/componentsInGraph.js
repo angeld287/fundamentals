@@ -38,8 +38,9 @@ function componentsInGraph(gb) {
     }
 
     gb.forEach((e) => {
-        const s1 = findSet(sets, e[0] - 1);
-        const s2 = findSet(sets, e[1] - 1);
+        console.log(e[0] - 1)
+        const s1 = findSet(sets, e[0] - 1, 1);
+        const s2 = findSet(sets, e[1] - 1, 0);
         if (s1.idx !== s2.idx) {
             // merge two sets
             mergeSets(s1, s2);
@@ -61,9 +62,13 @@ function componentsInGraph(gb) {
 
 }
 
-function findSet(sets, d) {
+function findSet(sets, d, w) {
     let s = d;
+
+    if (w === 1) console.log(sets[s].idx, s);
+
     while (sets[s].idx !== s) {
+
         s = sets[s].idx;
     }
     return sets[s];
