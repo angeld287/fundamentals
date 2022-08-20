@@ -19,17 +19,24 @@
 function divisionOfNlogonia(input) {
     var lines = input.split('\n');
     const result = []
+    let x, y, isFirstLine;
 
-    let x, y;
+    for (let i = 0; i < lines.length; i++) {
+        const e = lines[i].split(" ");
 
-    const firstLine = lines[0]; //one integer K that indicate the number of quieries.
-    const secondLine = lines[1].split(" "); //two integer N, M - Coordinates of division point
-    const othersLines = lines.filter((_, i) => i > 1).map((line) => line.split(" "))
+        if (e[0] === 0) break;
 
-    for (let i = 0; i < firstLine; i++) {
-        const e = othersLines[i];
-        const x = parseInt(secondLine[0])
-        const y = parseInt(secondLine[1])
+        if (isFirstLine) {
+            x = parseInt(e[0])
+            y = parseInt(e[1])
+            isFirstLine = false;
+            continue;
+        }
+
+        if (e.length === 1) {
+            isFirstLine = true
+            continue;
+        }
 
         const N_S = (y < parseInt(e[1])) ? "N" : "S"
         let R = (x < parseInt(e[0])) ? N_S + "E" : N_S + "O"
@@ -37,9 +44,12 @@ function divisionOfNlogonia(input) {
         if (x === parseInt(e[0]) || y === parseInt(e[1])) {
             R = "divisa"
         }
-        result.push(R)
-    }
 
+        result.push(R)
+
+    };
+
+    return result
 }
 
 const input = `3
