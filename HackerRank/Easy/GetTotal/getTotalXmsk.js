@@ -18,12 +18,6 @@ function getTotalX(a, b) {
             } else continue
         } else continue
     }
-
-    const result = [
-
-    ];
-
-    console.log(Math.max(...b))
     return output.length
 
 }
