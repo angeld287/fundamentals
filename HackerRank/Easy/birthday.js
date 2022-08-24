@@ -1,4 +1,4 @@
-function birthday() {
+function birthday(s, d, m) {
 
 }
 
